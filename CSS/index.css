@@ -1,0 +1,38 @@
+/* Estilos para la sección principal */
+main {
+    background-image: url(../Materiales/Imagenes/Deptos/la-colorada-en-la-esquina-de-cabello-y-republica-HENBE33VLRE6TOBMWX6VIOI52M.avif); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen de fondo */
+    background-size: contain; /* Escalar la imagen para que quepa dentro del contenedor */
+    background-position: bottom; /* Posición de la imagen de fondo en la parte inferior */
+    background-color: rgba(0,0,0,0.4); /* Color de fondo semi-transparente */
+    background-blend-mode: overlay; /* Mezclar el color de fondo con la imagen */
+}
+
+/* Estilos para los títulos dentro de la sección principal */
+main h2 {
+    text-align: center; /* Alinear texto al centro */
+    color: #f2f2f2; /* Color del texto */
+}
+
+/* Estilos para el formulario dentro de la sección principal */
+main form {
+    display: flex; /* Mostrar como flexbox */
+    justify-content: space-evenly; /* Distribuir uniformemente los elementos */
+    padding: 4rem; /* Relleno alrededor del formulario */
+}
+
+/* Estilos para los elementos del formulario dentro de la sección principal */
+main form .item {
+    width: 20%; /* Ancho del 20% del contenedor */
+    font-family: "Bree Serif", serif; /* Fuente del texto */
+    text-align: center; /* Alinear texto al centro */
+    border-radius: 15px; /* Borde redondeado */
+    border: #C689EC solid 2px; /* Borde sólido con color */
+}
+
+/* Estilos para el botón dentro del formulario dentro de la sección principal */
+main form button {
+    background-color: #9F8BE8; /* Color de fondo del botón */
+    color: #FFFFFF; /* Color del texto del botón */
+    border: black solid 2px; /* Borde sólido con color */
+}

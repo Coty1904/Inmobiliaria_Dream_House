@@ -1,0 +1,124 @@
+h2 {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.container {
+    display: flex;
+    padding-top: 1rem;
+}
+
+/* Estilos para el aside que contiene el formulario */
+.filtro {
+    margin-left: 1rem;
+    width: 20%;
+    position: sticky;
+    top: 3rem;
+    height: calc(100% - 3rem); /* Establece una altura que ocupe el espacio restante de la ventana */
+    overflow-y: auto; /* Añade desplazamiento vertical si el contenido excede la altura */
+}
+
+fieldset {
+    height: 100%; /* Establece la altura del fieldset al 100% del contenedor */
+    border: 2px solid #C689EC;
+}
+
+fieldset div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+form button {
+    width: 100%;
+    background-color: #C689EC;
+    border: none;
+}
+
+form button:hover {
+    opacity: .8;
+}
+
+.container-deptos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+/* Estilos para los elementos de los departamentos */
+.depto {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid #C689EC;
+    background-color: #31D6D0;
+    margin-bottom: 1rem;
+}
+
+.depto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Añade una transición suave para el efecto de opacidad */
+}
+
+.depto p {
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem; /* Añade un poco de espacio entre el texto y el borde del div */
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Añade una transición suave para el efecto de opacidad */
+}
+
+#txt_1 {
+    margin-bottom: 3rem;
+}
+
+.depto:hover img {
+    opacity: 0; /* Cambia el valor según la cantidad de opacidad deseada */
+}
+
+.depto:hover p {
+    opacity: 1;
+}
+
+.depto:hover {
+    background-color: #2baaa6;
+    background-blend-mode: lighten;
+}
+
+#depto_1 {
+    background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.43.58_a75e9933.jpg);
+    background-size: cover;
+}
+
+#depto_2 {
+    background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.44.25_4ca0f148.jpg);
+    background-size: cover;
+}
+
+#depto_3 {
+    background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.44.59_c9362017.jpg);
+    background-size: cover;
+}
+
+#depto_4 {
+    background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.45.32_19d5b007.jpg);
+    background-size: cover;
+}
+
+#depto_5 {
+    background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.46.07_ce05216a.jpg);
+    background-size: cover;
+}
+
+#depto_6 {
+    background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.46.07_ce05216a.jpg);
+    background-size: cover;
+}

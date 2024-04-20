@@ -1,0 +1,124 @@
+/* Importar las fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Dancing+Script:wght@400..700&display=swap');
+
+:root {
+    --header-footer-height: 15.7rem; 
+}
+/* Estilos globales */
+*{
+    color: #0C0E0E;
+    padding: 0;
+    margin: 0;
+    font-family: "Bree Serif", serif; /* Establecer la fuente predeterminada */
+}
+
+/* Estilos del cuerpo de la página */
+body {
+    min-height: 100vh; /* Establecer el cuerpo al menos del tamaño de la ventana gráfica */
+}
+
+/* Estilos de las barras de desplazamiento */
+body::-webkit-scrollbar{
+    background-color: #44aaa7; /* Color de fondo de la barra de desplazamiento */
+    width: 5px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #C689EC; /* Color del "pulgador" de la barra de desplazamiento */
+    border-radius: 10px; /* Borde redondeado del "pulgador" */
+}
+
+/* Estilos de la cabecera */
+header {
+    background-color:  #31D6D0; /* Color de fondo de la cabecera */
+    width: 100%; /* Ancho completo */
+    height: 5rem; /* Altura mínima necesaria para contener su contenido */
+    display: flex; /* Mostrar como flexbox */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+}
+
+header img {
+    width: 4%; /* Ancho de la imagen */
+    margin: .5rem; /* Margen alrededor de la imagen */
+}
+
+header h1 {
+    background-color: #31D6D0; /* Color de fondo del título */
+    color: #662395; /* Color del texto */
+    font-family: "Dancing Script", cursive; /* Fuente del título */
+    font-weight: 700; /* Peso de la fuente */
+    font-size: 2rem; /* Tamaño de la fuente */
+}
+
+/* Estilos de la navegación */
+nav {
+    position: sticky; /* Posición pegajosa */
+    top: 0; /* Desde la parte superior */
+    z-index: 1; /* Capa z superior */
+    background-color: #C689EC; /* Color de fondo de la navegación */
+    font-family: "Bree Serif", serif; /* Fuente de la navegación */
+    height: 2.5rem;
+}
+
+nav ul {
+    list-style: none; /* Quitar viñetas de la lista */
+    display: flex; /* Mostrar como flexbox */
+    align-items: center; /* Alinear elementos verticalmente al centro */
+    justify-content: space-around; /* Distribuir uniformemente los elementos */
+    padding: .5rem; /* Relleno alrededor de la lista */
+}
+
+nav ul li {
+    color: #0C0E0E; /* Color del texto de los elementos de lista */
+    width: 20%; /* Ancho de los elementos de lista */
+    text-align: center; /* Alinear texto al centro */
+}
+
+nav ul li a {
+    background-color: #C689EC; /* Color de fondo de los enlaces */
+    text-decoration: none; /* Quitar subrayado del texto */
+    padding-left: 1rem; /* Relleno a la izquierda del enlace */
+    padding-right: 1rem; /* Relleno a la derecha del enlace */
+}
+
+nav a:hover, a#selected:hover {
+    background-color: #7D45A2; /* Color de fondo del enlace al hacer hover */
+    border-radius: 10px; /* Borde redondeado al hacer hover */
+}
+
+nav a#selected {
+    background-color: #A166C6; /* Color de fondo del enlace seleccionado */
+    border-radius: 10px; /* Borde redondeado del enlace seleccionado */
+}
+
+/* Estilos del pie de página */
+footer {
+    width: 100%; /* Ancho completo */
+    height: 7.5rem;
+    display: flex; /* Mostrar como flexbox */
+    justify-content: space-around; /* Distribuir uniformemente los elementos */
+    border-top: 3px solid #C689EC; /* Borde superior */
+    background-color: #9F8BEC; /* Color de fondo del pie de página */
+    padding-bottom: 0.5rem; /* Relleno inferior */
+    font-family: "Bree Serif", serif; /* Fuente del pie de página */
+}
+
+footer h3 {
+    padding-top: 1rem; /* Relleno superior del título */
+    padding-bottom: 0.5rem; /* Relleno inferior del título */
+}
+
+footer ul {
+    list-style: none; /* Quitar viñetas de la lista */
+}
+
+footer a {
+    text-decoration: none; /* Quitar subrayado del texto */
+}
+
+/* Aplica la altura mínima para el main */
+main {
+    /* Calcula la altura del main como 100vh menos el tamaño del header y footer */
+    min-height: calc(100vh - var(--header-footer-height));
+}
