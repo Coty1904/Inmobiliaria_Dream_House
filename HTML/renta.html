@@ -28,9 +28,9 @@
         <h2>Renta</h2>
         <div class="container">
             <aside class="filtro">
-                <form action="#" method="get">
+                <form id="filter-form" action="#" method="get">
                     <fieldset>
-                        <legend>Filtros</legend>
+                        <h3>Filtros</h3>
                         <div>
                             <label for="min-precio">Precio Mínimo:</label>
                             <input type="text" id="min-precio" name="min-precio" placeholder="Min.">
@@ -41,50 +41,117 @@
                         </div>
                         <div>
                             <label for="barrio">Barrio:</label>
-                            <input type="text" id="barrio" name="barrio" placeholder="Barrio">
+                            <select id="barrio" name="barrio">
+                                <option value="">Todos</option>
+                                <option value="palermo">Palermo</option>
+                                <option value="barrio norte">Barrio Norte</option>
+                                <option value="once">Once</option>
+                                <option value="caballito">Caballito</option>
+                                <option value="recoleta">Recoleta</option>
+                            </select>
                         </div>
                         <div>
                             <label>Ambientes:</label>
                             <label><input type="checkbox" name="ambiente" value="1"> 1</label>
                             <label><input type="checkbox" name="ambiente" value="2"> 2</label>
                             <label><input type="checkbox" name="ambiente" value="3"> 3</label>
-                            <label><input type="checkbox" name="ambiente" value="4"> 4</label>
-                            <label><input type="checkbox" name="ambiente" value="5+"> 5 o más</label>
+                            <label><input type="checkbox" name="ambiente" value="4"> 4 ó más</label>
                         </div>
                     </fieldset>
                     <button type="submit">Buscar</button>
                 </form>                
             </aside>
             <div class="container-deptos">
+                <div id="mensaje-no-resultados" style="display: none;">No se encontraron departamentos con esas características.</div>
                 <div class="depto" id="depto_1">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.46.14_e537f715.jpg" alt="Depto 1">
                     <p id="txt_1">Avenida Libertador 2500, Palermo</p>
                     <p id="txt_2">$3.400.000</p>
+                    <p id="txt_3">Monoambiente</p>
                 </div>
                 <div class="depto" id="depto_2">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.47.28_bea5dd37.jpg" alt="Depto 2">
                     <p id="txt_1">Calle Lavalle 1892, Barrio Norte</p>
                     <p id="txt_2">$5.000.000</p>
+                    <p id="txt_3">Monoambiente</p>
                 </div>
                 <div class="depto" id="depto_3">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.47.48_3d9712af.jpg" alt="Depto 3">
                     <p id="txt_1">Avenida Corrientes 2765, Once</p>
                     <p id="txt_2">$1.800.000</p>
+                    <p id="txt_3">3 ambientes</p>
                 </div>
                 <div class="depto" id="depto_4">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.48.06_075cad69.jpg" alt="Depto 4">
                     <p id="txt_1">Pasaje San Martín 1478, Palermo</p>
                     <p id="txt_2">$4.200.000</p>
+                    <p id="txt_3">2 ambientes</p>
                 </div>
                 <div class="depto" id="depto_5">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.48.35_ba538be0.jpg" alt="Depto 5">
                     <p id="txt_1">Avenida Rivadavia 5623, Caballito</p>
                     <p id="txt_2">$3.800.000</p>
+                    <p id="txt_3">Monoambiente</p>
                 </div>
                 <div class="depto" id="depto_6">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.49.39_4c99f60c.jpg" alt="Depto 6">
                     <p id="txt_1">Calle Sarmiento 3109, Recoleta</p>
                     <p id="txt_2">$4.200.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_7">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.31.14_0e420c6f.jpg" alt="Depto 7">
+                    <p id="txt_1">Calle Sarmiento 1909, Recoleta</p>
+                    <p id="txt_2">$3.500.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_8">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.31.14_30102d01.jpg" alt="Depto 8">
+                    <p id="txt_1">Calle Lavalle 2352, Barrio Norte</p>
+                    <p id="txt_2">$4.670.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_9">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.31.33_d1f28d42.jpg" alt="Depto 9">
+                    <p id="txt_1">Avenida Corrientes 2361, Once</p>
+                    <p id="txt_2">$2.800.000</p>
+                    <p id="txt_3">3 ambientes</p>
+                </div>
+                <div class="depto" id="depto_10">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.33.46_2a3cb96a.jpg" alt="Depto 10">
+                    <p id="txt_1">Paraguay 1634, Palermo</p>
+                    <p id="txt_2">$3.330.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_11">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.35.47_504e30fe.jpg" alt="Depto 11">
+                    <p id="txt_1">Avenida Rivadavia 5386, Caballito</p>
+                    <p id="txt_2">$3.848.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_12">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.28.52_9dd08e66.jpg" alt="Depto 12">
+                    <p id="txt_1">Calle Sarmiento 4334, Recoleta</p>
+                    <p id="txt_2">$5.700.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_13">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.32.57_8af918ac.jpg" alt="Depto 13">
+                    <p id="txt_1">Paraguay 2172, Palermo</p>
+                    <p id="txt_2">$4.530.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_14">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.32.56_78143579.jpg" alt="Depto 14">
+                    <p id="txt_1">Avenida Rivadavia 5709, Caballito</p>
+                    <p id="txt_2">$6.913.000</p>
+                    <p id="txt_3">3 ambiente</p>
+                </div>
+                <div class="depto" id="depto_15">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.31.16_949f7e46.jpg" alt="Depto 15">
+                    <p id="txt_1">Calle Sarmiento 4334, Recoleta</p>
+                    <p id="txt_2">$5.530.000</p>
+                    <p id="txt_3">4 ambientes</p>
                 </div>
             </div>
         </div>
@@ -103,5 +170,100 @@
             </ul>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#filter-form').submit(function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe
+
+                // Captura los valores de los filtros
+                const minPrecio = parseFloat($('#min-precio').val().replace(/[^\d]/g, ''));
+                const maxPrecio = parseFloat($('#max-precio').val().replace(/[^\d]/g, ''));
+                const barrio = $('#barrio').val().toLowerCase();
+                const ambientes = $('input[name="ambiente"]:checked').map(function() {
+                    return $(this).val();
+                }).get();
+
+                // Selecciona todos los departamentos
+                const deptos = $('.depto');
+
+                // Itera sobre los departamentos y muestra/oculta según los filtros
+                let hayResultados = false;
+                deptos.each(function() {
+                    const precio = parseFloat($(this).find('p[id="txt_2"]').text().replace(/[^\d]/g, ''));
+                    const deptoBarrio = $(this).find('p[id="txt_1"]').text().toLowerCase();
+                    const deptoAmbientes = $(this).find('p[id="txt_3"]').text().toLowerCase();
+
+                    let show = true;
+
+                    // Filtrar por precio
+                    if (!isNaN(minPrecio) && precio < minPrecio) show = false;
+                    if (!isNaN(maxPrecio) && precio > maxPrecio) show = false;
+
+                    // Filtrar por barrio
+                    if (barrio && !deptoBarrio.includes(barrio)) show = false;
+
+                    // Filtrar por ambientes
+                    if (ambientes.length > 0) {
+                        let ambienteMatch = false;
+                        ambientes.forEach(function(ambiente) {
+                            if (ambiente === "1" && deptoAmbientes.includes("monoambiente")) ambienteMatch = true;
+                            if (ambiente === "2" && deptoAmbientes.includes("2 ambientes")) ambienteMatch = true;
+                            if (ambiente === "3" && deptoAmbientes.includes("3 ambientes")) ambienteMatch = true;
+                            if (ambiente === "4" && (deptoAmbientes.includes("4 ambientes") || deptoAmbientes.includes("4 ó más ambientes"))) ambienteMatch = true;
+                        });
+                        if (!ambienteMatch) show = false;
+                    }
+
+                    // Animar la aparición o desaparición del departamento
+                    if (show && $(this).css('display') === 'none') {
+                        $(this).fadeIn('slow');
+                    } else if (!show && $(this).css('display') !== 'none') {
+                        $(this).fadeOut('slow');
+                    }
+
+                    // Verificar si hay resultados
+                    if (show) {
+                        hayResultados = true;
+                    }
+                });
+
+                // Mostrar mensaje si no hay resultados
+                if (!hayResultados) {
+                    $('#mensaje-no-resultados').fadeIn('slow');
+                } else {
+                    $('#mensaje-no-resultados').fadeOut('slow');
+                }
+
+                // Guardar la opción de filtrado
+                localStorage.setItem('filtros', JSON.stringify({
+                    minPrecio,
+                    maxPrecio,
+                    barrio,
+                    ambientes
+                }));
+            });
+
+            // Cargar los filtros guardados al cargar la página
+            const savedFilters = JSON.parse(localStorage.getItem('filtros'));
+
+            if (savedFilters) {
+                if (savedFilters.minPrecio) $('#min-precio').val(savedFilters.minPrecio);
+                if (savedFilters.maxPrecio) $('#max-precio').val(savedFilters.maxPrecio);
+                if (savedFilters.barrio) $('#barrio').val(savedFilters.barrio);
+                if (savedFilters.ambientes) {
+                    savedFilters.ambientes.forEach(function(value) {
+                        const checkbox = $(`input[name="ambiente"][value="${value}"]`);
+                        if (checkbox) checkbox.prop('checked', true);
+                    });
+                }
+
+                // Simular el envío del formulario para aplicar los filtros
+                $('#filter-form').submit();
+            }
+        });
+    </script>
+
 </body>
 </html>

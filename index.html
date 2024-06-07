@@ -28,14 +28,17 @@
         <h2>¡Nuevos departamentos a la venta!</h2>
         <form action="#" method="get">
             <select class="item" name="opcion_accion" id="accion">
-                <option value="compra">Compra</option>
+                <option value="venta">Venta</option>
                 <option value="renta">Renta</option>
             </select>
-            <select class="item" name="opcion_inmueble" id="inmueble">
-                <option value="departamento">Departamento</option>
-                <option value="casa">Casa</option>
+            <select class="item" name="barrio" id="barrio">
+                <option value="">Barrio</option>
+                <option value="palermo">Palermo</option>
+                <option value="barrio norte">Barrio Norte</option>
+                <option value="once">Once</option>
+                <option value="caballito">Caballito</option>
+                <option value="recoleta">Recoleta</option>
             </select>
-            <input class="item" type="text" id="barrio" name="barrio" placeholder="Barrio">
             <button class="item">Buscar</button>
         </form>
     </main>
@@ -53,5 +56,7 @@
             </ul>
         </div>
     </footer>
+
+    <script src="./JavaScript/filtro_index.js"></script>
 </body>
 </html>
