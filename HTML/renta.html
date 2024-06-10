@@ -264,90 +264,92 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Limpia los filtros al cargar una nueva página
-            limpiarFiltros();
-
-            $('#filter-form').submit(function(event) {
-            event.preventDefault(); // Evita que el formulario se envíe
-
-            const minPrecio = parseFloat($('#min-precio').val().replace(/[^\d]/g, ''));
-            const maxPrecio = parseFloat($('#max-precio').val().replace(/[^\d]/g, ''));
-            const barrio = $('#barrio').val().toLowerCase();
-            const ambientes = $('input[name="ambiente"]:checked').map(function() {
-                return $(this).val();
-            }).get();
-
-            const deptos = $('.depto');
-
-            let hayResultados = false;
-            deptos.each(function() {
-                const precio = parseFloat($(this).find('p[id="txt_2"]').text().replace(/[^\d]/g, ''));
-                const deptoBarrio = $(this).find('p[id="txt_1"]').text().toLowerCase();
-                const deptoAmbientes = $(this).find('p[id="txt_3"]').text().toLowerCase();
-
-                let show = true;
-
-                if (!isNaN(minPrecio) && precio < minPrecio) show = false;
-                if (!isNaN(maxPrecio) && precio > maxPrecio) show = false;
-                if (barrio && !deptoBarrio.includes(barrio)) show = false;
-                if (ambientes.length > 0) {
-                    let ambienteMatch = false;
-                    ambientes.forEach(function(ambiente) {
-                        if (ambiente === "1" && deptoAmbientes.includes("monoambiente")) ambienteMatch = true;
-                        if (ambiente === "2" && deptoAmbientes.includes("2 ambientes")) ambienteMatch = true;
-                        if (ambiente === "3" && deptoAmbientes.includes("3 ambientes")) ambienteMatch = true;
-                        if (ambiente === "4" && (deptoAmbientes.includes("4 ambientes") || deptoAmbientes.includes("4 ó más ambientes"))) ambienteMatch = true;
-                    });
-                    if (!ambienteMatch) show = false;
-                }
-
-                if (show && $(this).css('display') === 'none') {
-                    $(this).fadeIn('slow');
-                } else if (!show && $(this).css('display') !== 'none') {
-                    $(this).fadeOut('slow');
-                }
-
-                if (show) {
-                    hayResultados = true;
-                }
+            // Verificar si se está abandonando la página
+            $(window).on('beforeunload', function() {
+                // Limpiar los filtros al salir de la página
+                limpiarFiltros();
             });
-
-            if (!hayResultados) {
-                $('#mensaje-no-resultados').fadeIn('slow');
-            } else {
-                $('#mensaje-no-resultados').fadeOut('slow');
-            }
-
-            localStorage.setItem('filtros', JSON.stringify({
-                minPrecio,
-                maxPrecio,
-                barrio,
-                ambientes
-            }));
-        });
-
-        const savedFilters = JSON.parse(localStorage.getItem('filtros'));
-
-        if (savedFilters) {
-            // Restablecer los filtros guardados al cargar la página
-            if (savedFilters.minPrecio) $('#min-precio').val(savedFilters.minPrecio);
-            if (savedFilters.maxPrecio) $('#max-precio').val(savedFilters.maxPrecio);
-            if (savedFilters.barrio) $('#barrio').val(savedFilters.barrio);
-            if (savedFilters.ambientes) {
-                savedFilters.ambientes.forEach(function(value) {
-                    const checkbox = $(`input[name="ambiente"][value="${value}"]`);
-                    if (checkbox) checkbox.prop('checked', true);
+            $('#filter-form').submit(function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe
+    
+                const minPrecio = parseFloat($('#min-precio').val().replace(/[^\d]/g, ''));
+                const maxPrecio = parseFloat($('#max-precio').val().replace(/[^\d]/g, ''));
+                const barrio = $('#barrio').val().toLowerCase();
+                const ambientes = $('input[name="ambiente"]:checked').map(function() {
+                    return $(this).val();
+                }).get();
+    
+                const deptos = $('.depto');
+    
+                let hayResultados = false;
+                deptos.each(function() {
+                    const precio = parseFloat($(this).find('p[id="txt_2"]').text().replace(/[^\d]/g, ''));
+                    const deptoBarrio = $(this).find('p[id="txt_1"]').text().toLowerCase();
+                    const deptoAmbientes = $(this).find('p[id="txt_3"]').text().toLowerCase();
+    
+                    let show = true;
+    
+                    if (!isNaN(minPrecio) && precio < minPrecio) show = false;
+                    if (!isNaN(maxPrecio) && precio > maxPrecio) show = false;
+                    if (barrio && !deptoBarrio.includes(barrio)) show = false;
+                    if (ambientes.length > 0) {
+                        let ambienteMatch = false;
+                        ambientes.forEach(function(ambiente) {
+                            if (ambiente === "1" && deptoAmbientes.includes("monoambiente")) ambienteMatch = true;
+                            if (ambiente === "2" && deptoAmbientes.includes("2 ambientes")) ambienteMatch = true;
+                            if (ambiente === "3" && deptoAmbientes.includes("3 ambientes")) ambienteMatch = true;
+                            if (ambiente === "4" && (deptoAmbientes.includes("4 ambientes") || deptoAmbientes.includes("4 ó más ambientes"))) ambienteMatch = true;
+                        });
+                        if (!ambienteMatch) show = false;
+                    }
+    
+                    if (show && $(this).css('display') === 'none') {
+                        $(this).fadeIn('slow');
+                    } else if (!show && $(this).css('display') !== 'none') {
+                        $(this).fadeOut('slow');
+                    }
+    
+                    if (show) {
+                        hayResultados = true;
+                    }
                 });
+    
+                if (!hayResultados) {
+                    $('#mensaje-no-resultados').fadeIn('slow');
+                } else {
+                    $('#mensaje-no-resultados').fadeOut('slow');
+                }
+    
+                // Guarda los filtros en el almacenamiento local
+                localStorage.setItem('filtros', JSON.stringify({
+                    minPrecio,
+                    maxPrecio,
+                    barrio,
+                    ambientes
+                }));
+            });
+    
+            const savedFilters = JSON.parse(localStorage.getItem('filtros'));
+    
+            if (savedFilters) {
+                if (savedFilters.minPrecio) $('#min-precio').val(savedFilters.minPrecio);
+                if (savedFilters.maxPrecio) $('#max-precio').val(savedFilters.maxPrecio);
+                if (savedFilters.barrio) $('#barrio').val(savedFilters.barrio);
+                if (savedFilters.ambientes) {
+                    savedFilters.ambientes.forEach(function(value) {
+                        const checkbox = $(`input[name="ambiente"][value="${value}"]`);
+                        if (checkbox) checkbox.prop('checked', true);
+                    });
+                }
+    
+                $('#filter-form').submit();
             }
-
-            $('#filter-form').submit();
-        }
         });
 
-        // Función para limpiar los filtros al cargar una nueva página
+        // Función para limpiar los filtros
         function limpiarFiltros() {
-        localStorage.removeItem('filtros');
+            localStorage.removeItem('filtros');
         }
-    </script>
+    </script>      
 </body>
 </html>
