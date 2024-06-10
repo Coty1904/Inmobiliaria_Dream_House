@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Dancing+Script:wght@400..700&display=swap');
 
 :root {
-    --header-footer-height: 15.7rem; 
+    --header-footer-height: 14rem; 
 }
 /* Estilos globales */
 *{
@@ -95,7 +95,6 @@ nav a#selected {
 /* Estilos del pie de página */
 footer {
     width: 100%; /* Ancho completo */
-    height: 7.5rem;
     display: flex; /* Mostrar como flexbox */
     justify-content: space-around; /* Distribuir uniformemente los elementos */
     border-top: 3px solid #C689EC; /* Borde superior */

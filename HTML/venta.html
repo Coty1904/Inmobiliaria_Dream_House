@@ -28,9 +28,9 @@
         <h2>Venta</h2>
         <div class="container">
             <aside class="filtro">
-                <form action="#" method="get">
+                <form id="filter-form" action="#" method="get">
                     <fieldset>
-                        <legend>Filtros</legend>
+                        <h3>Filtros</h3>
                         <div>
                             <label for="min-precio">Precio Mínimo:</label>
                             <input type="text" id="min-precio" name="min-precio" placeholder="Min.">
@@ -41,50 +41,207 @@
                         </div>
                         <div>
                             <label for="barrio">Barrio:</label>
-                            <input type="text" id="barrio" name="barrio" placeholder="Barrio">
+                            <select id="barrio" name="barrio">
+                                <option value="">Todos</option>
+                                <option value="palermo">Palermo</option>
+                                <option value="barrio norte">Barrio Norte</option>
+                                <option value="once">Once</option>
+                                <option value="caballito">Caballito</option>
+                                <option value="recoleta">Recoleta</option>
+                            </select>
                         </div>
                         <div>
                             <label>Ambientes:</label>
                             <label><input type="checkbox" name="ambiente" value="1"> 1</label>
                             <label><input type="checkbox" name="ambiente" value="2"> 2</label>
                             <label><input type="checkbox" name="ambiente" value="3"> 3</label>
-                            <label><input type="checkbox" name="ambiente" value="4"> 4</label>
-                            <label><input type="checkbox" name="ambiente" value="5+"> 5 o más</label>
+                            <label><input type="checkbox" name="ambiente" value="4"> 4 ó más</label>
                         </div>
                     </fieldset>
                     <button type="submit">Buscar</button>
                 </form>                
             </aside>
             <div class="container-deptos">
+                <div id="mensaje-no-resultados" style="display: none;">No se encontraron departamentos con esas características.</div>
                 <div class="depto" id="depto_1">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.46.14_e537f715.jpg" alt="Depto 1">
                     <p id="txt_1">Avenida Libertador 2500, Palermo</p>
                     <p id="txt_2">$3.400.000</p>
+                    <p id="txt_3">Monoambiente</p>
                 </div>
                 <div class="depto" id="depto_2">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.47.28_bea5dd37.jpg" alt="Depto 2">
                     <p id="txt_1">Calle Lavalle 1892, Barrio Norte</p>
                     <p id="txt_2">$5.000.000</p>
+                    <p id="txt_3">Monoambiente</p>
                 </div>
                 <div class="depto" id="depto_3">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.47.48_3d9712af.jpg" alt="Depto 3">
                     <p id="txt_1">Avenida Corrientes 2765, Once</p>
                     <p id="txt_2">$1.800.000</p>
+                    <p id="txt_3">3 ambientes</p>
                 </div>
                 <div class="depto" id="depto_4">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.48.06_075cad69.jpg" alt="Depto 4">
                     <p id="txt_1">Pasaje San Martín 1478, Palermo</p>
                     <p id="txt_2">$4.200.000</p>
+                    <p id="txt_3">2 ambientes</p>
                 </div>
                 <div class="depto" id="depto_5">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.48.35_ba538be0.jpg" alt="Depto 5">
                     <p id="txt_1">Avenida Rivadavia 5623, Caballito</p>
                     <p id="txt_2">$3.800.000</p>
+                    <p id="txt_3">Monoambiente</p>
                 </div>
                 <div class="depto" id="depto_6">
                     <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-04-14 a las 15.49.39_4c99f60c.jpg" alt="Depto 6">
                     <p id="txt_1">Calle Sarmiento 3109, Recoleta</p>
                     <p id="txt_2">$4.200.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_7">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.31.14_0e420c6f.jpg" alt="Depto 7">
+                    <p id="txt_1">Calle Sarmiento 1909, Recoleta</p>
+                    <p id="txt_2">$3.500.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_8">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.31.14_30102d01.jpg" alt="Depto 8">
+                    <p id="txt_1">Calle Lavalle 2352, Barrio Norte</p>
+                    <p id="txt_2">$4.670.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_9">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.31.33_d1f28d42.jpg" alt="Depto 9">
+                    <p id="txt_1">Avenida Corrientes 2361, Once</p>
+                    <p id="txt_2">$2.800.000</p>
+                    <p id="txt_3">3 ambientes</p>
+                </div>
+                <div class="depto" id="depto_10">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.33.46_2a3cb96a.jpg" alt="Depto 10">
+                    <p id="txt_1">Paraguay 1634, Palermo</p>
+                    <p id="txt_2">$3.330.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_11">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 15.35.47_504e30fe.jpg" alt="Depto 11">
+                    <p id="txt_1">Avenida Rivadavia 5386, Caballito</p>
+                    <p id="txt_2">$3.848.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_12">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.28.52_9dd08e66.jpg" alt="Depto 12">
+                    <p id="txt_1">Calle Sarmiento 4334, Recoleta</p>
+                    <p id="txt_2">$5.700.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_13">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.32.57_8af918ac.jpg" alt="Depto 13">
+                    <p id="txt_1">Paraguay 2172, Palermo</p>
+                    <p id="txt_2">$4.530.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_14">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.32.56_78143579.jpg" alt="Depto 14">
+                    <p id="txt_1">Avenida Rivadavia 5709, Caballito</p>
+                    <p id="txt_2">$6.913.000</p>
+                    <p id="txt_3">3 ambiente</p>
+                </div>
+                <div class="depto" id="depto_15">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.31.16_949f7e46.jpg" alt="Depto 15">
+                    <p id="txt_1">Calle Sarmiento 4334, Recoleta</p>
+                    <p id="txt_2">$5.530.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_1">
+                    <img src="../Materiales/Imagenes/Deptos/Imagen de WhatsApp 2024-06-06 a las 16.30.28_197aea1f.jpg" alt="Depto 16">
+                    <p id="txt_1">Avenida Corrientes 3170, Once</p>
+                    <p id="txt_2">$4.785.000</p>
+                    <p id="txt_3">3 ambientes</p>
+                </div>
+                <div class="depto" id="depto_12">
+                    <img src="../Materiales/Imagenes/Deptos/images.jpeg" alt="Depto 17">
+                    <p id="txt_1">Calle Lavalle, Barrio Norte</p>
+                    <p id="txt_2">$6.100.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_14">
+                    <img src="../Materiales/Imagenes/Deptos/la-colorada-en-la-esquina-de-cabello-y-republica-HENBE33VLRE6TOBMWX6VIOI52M.avif" alt="Depto 18">
+                    <p id="txt_1">Paraguay 2610, Palermo</p>
+                    <p id="txt_2">$7.000.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_11">
+                    <img src="../Materiales/Imagenes/Deptos/OIP.jpeg" alt="Depto 19">
+                    <p id="txt_1">Calle Lavalle, Barrio Norte</p>
+                    <p id="txt_2">$5.900.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_13">
+                    <img src="../Materiales/Imagenes/Deptos/00441383-01.jpg" alt="Depto 20">
+                    <p id="txt_1">Paraguay 934, Palermo</p>
+                    <p id="txt_2">$4.330.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_10">
+                    <img src="../Materiales/Imagenes/Deptos/OIP (1).jpeg" alt="Depto 21">
+                    <p id="txt_1">Avenida Rivadavia 6718, Caballito</p>
+                    <p id="txt_2">$2.990.000</p>
+                    <p id="txt_3">3 ambientes</p>
+                </div>
+                <div class="depto" id="depto_9">
+                    <img src="../Materiales/Imagenes/Deptos/dep.4.jpg" alt="Depto 22">
+                    <p id="txt_1">Calle Sarmiento 2211, Recoleta</p>
+                    <p id="txt_2">$3.250.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_8">
+                    <img src="../Materiales/Imagenes/Deptos/dep5.jpg" alt="Depto 23">
+                    <p id="txt_1">Calle Lavalle, Barrio Norte</p>
+                    <p id="txt_2">$4.720.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_7">
+                    <img src="../Materiales/Imagenes/Deptos/dep6.jpg" alt="Depto 24">
+                    <p id="txt_1">Avenida Corrientes 3170, Once</p>
+                    <p id="txt_2">$3.700.000</p>
+                    <p id="txt_3">3 ambientes</p>
+                </div>
+                <div class="depto" id="depto_6">
+                    <img src="../Materiales/Imagenes/Deptos/dep7.jpeg" alt="Depto 25">
+                    <p id="txt_1">Calle Sarmiento 2552, Recoleta</p>
+                    <p id="txt_2">$4.770.000</p>
+                    <p id="txt_3">4 ambiente</p>
+                </div>
+                <div class="depto" id="depto_5">
+                    <img src="../Materiales/Imagenes/Deptos/dep8.jpg" alt="Depto 26">
+                    <p id="txt_1">Avenida Rivadavia 6010, Caballito</p>
+                    <p id="txt_2">$3.350.000</p>
+                    <p id="txt_3">2 ambientes</p>
+                </div>
+                <div class="depto" id="depto_4">
+                    <img src="../Materiales/Imagenes/Deptos/dep9.jpg" alt="Depto 27">
+                    <p id="txt_1">Pasaje San Martín 1478, Palermo</p>
+                    <p id="txt_2">$7.500.000</p>
+                    <p id="txt_3">4 ambientes</p>
+                </div>
+                <div class="depto" id="depto_3">
+                    <img src="../Materiales/Imagenes/Deptos/dep10.jpg" alt="Depto 28">
+                    <p id="txt_1">Calle Sarmiento 3344, Recoleta</p>
+                    <p id="txt_2">$4.400.000</p>
+                    <p id="txt_3">3 ambientes</p>
+                </div>
+                <div class="depto" id="depto_2">
+                    <img src="../Materiales/Imagenes/Deptos/dep11.jpg" alt="Depto 29">
+                    <p id="txt_1">Pasaje San Martín 5566,Recoleta</p>
+                    <p id="txt_2">$6.600.000</p>
+                    <p id="txt_3">Monoambiente</p>
+                </div>
+                <div class="depto" id="depto_1">
+                    <img src="../Materiales/Imagenes/Deptos/dep12.jpg" alt="Depto 30">
+                    <p id="txt_1">Avenida Libertador 1260, Palermo</p>
+                    <p id="txt_2">$2.700.000</p>
+                    <p id="txt_3">4 ambientes</p>
                 </div>
             </div>
         </div>
@@ -103,5 +260,94 @@
             </ul>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Limpia los filtros al cargar una nueva página
+            limpiarFiltros();
+
+            $('#filter-form').submit(function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            const minPrecio = parseFloat($('#min-precio').val().replace(/[^\d]/g, ''));
+            const maxPrecio = parseFloat($('#max-precio').val().replace(/[^\d]/g, ''));
+            const barrio = $('#barrio').val().toLowerCase();
+            const ambientes = $('input[name="ambiente"]:checked').map(function() {
+                return $(this).val();
+            }).get();
+
+            const deptos = $('.depto');
+
+            let hayResultados = false;
+            deptos.each(function() {
+                const precio = parseFloat($(this).find('p[id="txt_2"]').text().replace(/[^\d]/g, ''));
+                const deptoBarrio = $(this).find('p[id="txt_1"]').text().toLowerCase();
+                const deptoAmbientes = $(this).find('p[id="txt_3"]').text().toLowerCase();
+
+                let show = true;
+
+                if (!isNaN(minPrecio) && precio < minPrecio) show = false;
+                if (!isNaN(maxPrecio) && precio > maxPrecio) show = false;
+                if (barrio && !deptoBarrio.includes(barrio)) show = false;
+                if (ambientes.length > 0) {
+                    let ambienteMatch = false;
+                    ambientes.forEach(function(ambiente) {
+                        if (ambiente === "1" && deptoAmbientes.includes("monoambiente")) ambienteMatch = true;
+                        if (ambiente === "2" && deptoAmbientes.includes("2 ambientes")) ambienteMatch = true;
+                        if (ambiente === "3" && deptoAmbientes.includes("3 ambientes")) ambienteMatch = true;
+                        if (ambiente === "4" && (deptoAmbientes.includes("4 ambientes") || deptoAmbientes.includes("4 ó más ambientes"))) ambienteMatch = true;
+                    });
+                    if (!ambienteMatch) show = false;
+                }
+
+                if (show && $(this).css('display') === 'none') {
+                    $(this).fadeIn('slow');
+                } else if (!show && $(this).css('display') !== 'none') {
+                    $(this).fadeOut('slow');
+                }
+
+                if (show) {
+                    hayResultados = true;
+                }
+            });
+
+            if (!hayResultados) {
+                $('#mensaje-no-resultados').fadeIn('slow');
+            } else {
+                $('#mensaje-no-resultados').fadeOut('slow');
+            }
+
+            localStorage.setItem('filtros', JSON.stringify({
+                minPrecio,
+                maxPrecio,
+                barrio,
+                ambientes
+            }));
+        });
+
+        const savedFilters = JSON.parse(localStorage.getItem('filtros'));
+
+        if (savedFilters) {
+            // Restablecer los filtros guardados al cargar la página
+            if (savedFilters.minPrecio) $('#min-precio').val(savedFilters.minPrecio);
+            if (savedFilters.maxPrecio) $('#max-precio').val(savedFilters.maxPrecio);
+            if (savedFilters.barrio) $('#barrio').val(savedFilters.barrio);
+            if (savedFilters.ambientes) {
+                savedFilters.ambientes.forEach(function(value) {
+                    const checkbox = $(`input[name="ambiente"][value="${value}"]`);
+                    if (checkbox) checkbox.prop('checked', true);
+                });
+            }
+
+            $('#filter-form').submit();
+        }
+        });
+
+        // Función para limpiar los filtros al cargar una nueva página
+        function limpiarFiltros() {
+        localStorage.removeItem('filtros');
+        }
+    </script>
 </body>
 </html>

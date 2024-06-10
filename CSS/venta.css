@@ -11,11 +11,16 @@ h2 {
 /* Estilos para el aside que contiene el formulario */
 .filtro {
     margin-left: 1rem;
+    margin-bottom: 1rem;
     width: 20%;
     position: sticky;
     top: 3rem;
     height: calc(100% - 3rem); /* Establece una altura que ocupe el espacio restante de la ventana */
     overflow-y: auto; /* Añade desplazamiento vertical si el contenido excede la altura */
+}
+
+h3 {
+    margin-left: 1rem;
 }
 
 fieldset {
@@ -24,8 +29,8 @@ fieldset {
 }
 
 fieldset div {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
+    margin-right: 3rem;
 }
 
 form button {
@@ -40,21 +45,23 @@ form button:hover {
 
 .container-deptos {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 80%;
+    gap: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Estilos para los elementos de los departamentos */
 .depto {
     position: relative;
-    width: 20rem;
-    height: 20rem;
+    width: 17.5rem;
+    height: 17.5rem;
     overflow: hidden;
     text-align: center;
     border: 2px solid #C689EC;
     background-color: #31D6D0;
-    margin-bottom: 1rem;
 }
 
 .depto img {
@@ -80,6 +87,10 @@ form button:hover {
     margin-bottom: 3rem;
 }
 
+#txt_2 {
+    margin-bottom: 1.5rem;
+}
+
 .depto:hover img {
     opacity: 0; /* Cambia el valor según la cantidad de opacidad deseada */
 }
@@ -93,32 +104,46 @@ form button:hover {
     background-blend-mode: lighten;
 }
 
-#depto_1 {
+#mensaje-no-resultados {
+    width: 100%;
+    text-align: center;
+}
+
+#depto_1,
+#depto_9,
+#depto_15 {
     background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.43.58_a75e9933.jpg);
     background-size: cover;
 }
 
-#depto_2 {
+#depto_2,
+#depto_7,
+#depto_13 {
     background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.44.25_4ca0f148.jpg);
     background-size: cover;
 }
 
-#depto_3 {
+#depto_3,
+#depto_8,
+#depto_14 {
     background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.44.59_c9362017.jpg);
     background-size: cover;
 }
 
-#depto_4 {
+#depto_4,
+#depto_12 {
     background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.45.32_19d5b007.jpg);
     background-size: cover;
 }
 
-#depto_5 {
+#depto_5,
+#depto_10 {
     background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.46.07_ce05216a.jpg);
     background-size: cover;
 }
 
-#depto_6 {
+#depto_6,
+#depto_11 {
     background-image: url(../Materiales/Imagenes/Deptos/interior/Imagen\ de\ WhatsApp\ 2024-04-18\ a\ las\ 14.46.07_ce05216a.jpg);
     background-size: cover;
 }

@@ -27,7 +27,7 @@ main form .item {
     font-family: "Bree Serif", serif; /* Fuente del texto */
     text-align: center; /* Alinear texto al centro */
     border-radius: 15px; /* Borde redondeado */
-    border: #C689EC solid 2px; /* Borde sólido con color */
+    border: #C689EC solid 3px; /* Borde sólido con color */
 }
 
 /* Estilos para el botón dentro del formulario dentro de la sección principal */
@@ -35,4 +35,14 @@ main form button {
     background-color: #9F8BE8; /* Color de fondo del botón */
     color: #FFFFFF; /* Color del texto del botón */
     border: black solid 2px; /* Borde sólido con color */
+}
+
+main form select:hover, button:hover {
+    cursor: pointer;
+}
+
+main form button:hover {
+    background-color: #31D6D0;
+    border: solid 3px #C689EC;
+    color: black;
 }
